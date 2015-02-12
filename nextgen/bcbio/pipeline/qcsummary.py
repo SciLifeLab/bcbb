@@ -259,8 +259,7 @@ def _run_fastq_screen(fastq1, fastq2, config):
     utils.safe_makedir(out_base)
     program = config.get("program", {}).get("fastq_screen", "fastq_screen")
 
-    cl = [program, "--outdir", out_base, "--subset", "2000000", \
-        "--multilib", fastq1]
+    cl = [program, "--outdir", out_base, "--subset", "2000000", fastq1]
 
     if config["algorithm"].get("quality_format", "").lower() == 'illumina':
         cl.insert(1, "--illumina")
